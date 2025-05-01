@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning setinterval And Clear Interval</h1>
+    <p>Counter : <span id="counter"></span></p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let count=0;
+    let intervalId;
+
+    console.log("checking !!!");
+    let counter=document.getElementById('counter')
+    let startBtn=document.getElementById('start')
+    let stopBtn=document.getElementById('stop')
+
+    function updateCount() {
+        count++;
+        counter.textContent=count;
+    }
+
+    startBtn.addEventListener('click',()=>{intervalId=setInterval(updateCount, 10);})
+
+    stopBtn.addEventListener('click',()=>{clearInterval(intervalId);
+        counter.textContent="Stopped!"
+        // intervalId=null;
+    })
+   
+
+</script>
+</html>
